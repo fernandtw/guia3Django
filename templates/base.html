@@ -1,4 +1,5 @@
 
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -19,10 +21,10 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'inicio:home' %}">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
+                <a class="nav-link" href="{% url 'blog:lista' %}">Blog</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'tienda:lista' %}">Tienda</a>
@@ -31,9 +33,8 @@
           </div>
         </div>
       </nav>
-
-      {% block content %}
-
-      {% endblock %}
 </body>
 </html>
+{% block content %}
+{% endblock %}
+
