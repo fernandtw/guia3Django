@@ -1,10 +1,12 @@
-{% blockcontent %}
-{% load static%}
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  {% load static%}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <title>Document</title>
 </head>
 <body>
@@ -23,12 +25,15 @@
                 <a class="nav-link" href="#">Blog</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Tienda</a>
+                <a class="nav-link" href="{% url 'tienda:lista' %}">Tienda</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+
+      {% block content %}
+
+      {% endblock %}
 </body>
 </html>
-{% endblock %}
